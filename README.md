@@ -3,3 +3,4 @@
 
 # Listado de links de iconos usados de [flaticon](https://www.flaticon.es/)
 1. [Señal De Stop](https://www.flaticon.es/icono-gratis/senal-de-stop_1743240?term=stop&page=1&position=25&page=1&position=25&related_id=1743240&origin=search)
+2. [HTML5](https://www.flaticon.es/icono-gratis/html5_226269?term=html5&page=1&position=8&page=1&position=8&related_id=226269&origin=search)
