@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 05</title>
+</head>
+
+<body>
+    <h1>Ejemplo 05 : Abrir una nueva ventana con JavaScript</h1>
+
+    <p>Ejemplo MDN : Mi web</p>
+
+    <script type="text/javascript">
+        var objeto_window_referencia;
+        var configuracion_ventana = "menubar=no,location=no,resizable=no,scrollbars=no,status=no";
+
+        function abrir_Popup() {
+            objeto_window_referencia = window.open("https://practicasbyjmtm1.firebaseapp.com/asignatura/LM/downloads/recursos/diarioDeDesarrollo.html", "Internet Explorer está obsoleto", configuracion_ventana);
+        }
+
+        // Llamamos a la función
+
+        abrir_Popup();
+    </script>
+</body>
+
+</html>

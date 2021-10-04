@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 06</title>
+</head>
+<body>
+    <h1>Ejemplo del libro (modificado)</h1> 
+    <p>
+        <input type="button" value="Abrir una ventana" onclick="abrirVentana()" />
+    </p> 
+
+
+    <script type="text/javascript">
+        function abrirVentana() {
+            var miVentana = window.open("","Nueva ventana","width=777, height=777");
+            miVentana.document.write("<html>");
+            miVentana.document.write("<head>");
+            miVentana.document.write("<title>Ventana de prueba</title>");
+            miVentana.document.write("</head>");
+            miVentana.document.write("<body>");
+            miVentana.document.write("<p>Se han utilizado las propiedades : </p>");
+            miVentana.document.write("<ul>");
+            miVentana.document.write("<li> 'width=777' </li>");
+            miVentana.document.write("<li> 'height=777' </li>");
+            miVentana.document.write("</ul>");
+            miVentana.document.write("</body>");
+            miVentana.document.write("</html>");
+        }
+    </script>
+</body>
+</html>

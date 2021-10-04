@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 04</title>
+</head>
+
+<body>
+    <h1>Ejemplo 04 : Abrir una nueva ventana con JavaScript</h1>
+
+    <p>Ejemplo MDN</p>
+
+    <script type="text/javascript">
+        var objeto_window_referencia;
+        var configuracion_ventana = "menubar=no,location=yes,resizable=yes,scrollbars=yes,status=yes";
+
+        function abrir_Popup() {
+            objeto_window_referencia = window.open("https://support.microsoft.com/es-es/topic/este-sitio-web-funciona-mejor-en-microsoft-edge-160fa918-d581-4932-9e4e-1075c4713595?ui=es-es&rs=es-es&ad=es", "Internet Explorer está obsoleto", configuracion_ventana);
+        }
+
+        // Llamamos a la función
+
+        abrir_Popup();
+    </script>
+</body>
+
+</html>
