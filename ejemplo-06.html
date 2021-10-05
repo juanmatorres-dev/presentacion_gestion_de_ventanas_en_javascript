@@ -9,13 +9,23 @@
 <body>
     <h1>Ejemplo del libro (modificado)</h1> 
     <p>
-        <input type="button" value="Abrir una ventana" onclick="abrirVentana()" />
+        <input type="button" value="Abrir una ventana" onclick="abrirVentana() , document.getElementById('close').disabled=false;" />
     </p> 
+
+    <p>
+        <input type="button" value="Cerrar la ventana" id="close" disabled onclick="miVentana.close() , document.getElementById('close').disabled=true;" />
+    </p>
 
 
     <script type="text/javascript">
+        var miVentana;
+
+        window.onload = function desactivarElemento() {
+            document.getElementById('close').disabled=true;
+        }
+
         function abrirVentana() {
-            var miVentana = window.open("","Nueva ventana","width=777, height=777");
+            miVentana = window.open("","Nueva ventana","width=777, height=777");
             miVentana.document.write("<html>");
             miVentana.document.write("<head>");
             miVentana.document.write("<title>Ventana de prueba</title>");
@@ -29,6 +39,7 @@
             miVentana.document.write("</body>");
             miVentana.document.write("</html>");
         }
+
     </script>
 </body>
 </html>
