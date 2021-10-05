@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 09</title>
+</head>
+
+<body>
+    <h1>Centrar una ventana</h1>
+    <p>
+        <input type="button" value="Abrir ventana" onclick="abrirVentana()" />
+    </p>
+
+
+
+    <script type="text/javascript">
+        function abrirVentana() {
+
+
+            // definimos la anchura y altura de la ventana
+            var altura = 380;
+            var anchura = 630;
+
+            // calculamos la posicion x e y para centrar la ventana
+            var y = parseInt((window.screen.height / 2) - (altura / 2));
+            var x = parseInt((window.screen.width / 2) - (anchura / 2));
+
+            // mostramos la ventana centrada
+            var miVentana = window.open('', target = 'blank', 'width=' + anchura + ',height=' + altura + ',top=' + y +',left=' + x +
+                ',toolbar=no,location=no,status=no,menubar=no,scrollbars=no,directories=no,resizable=no');
+
+            miVentana.document.write("<html>");
+            miVentana.document.write("<head>");
+            miVentana.document.write("<title>Ventana de prueba</title>");
+            miVentana.document.write("</head>");
+            miVentana.document.write("<body>");
+            miVentana.document.write("<input type='button' value='Cerrar ventana' onclick='window.close()' />");
+            miVentana.document.write("</body>");
+            miVentana.document.write("</html>");
+
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>
