@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 08</title>
+</head>
+
+<body>
+    <h1>Ejemplo del libro 3 (modificado) | Situar una ventana en un lugar en específico</h1>
+    <p>
+        <input type="button" value="Abrir ventana" onclick="abrirVentana()" />
+    </p>
+
+    <script type="text/javascript">
+        function abrirVentana() {
+
+            var miVentana;
+            miVentana = window.open("", "", "top=0 , left=0 ,width=777, height=777");
+            miVentana.document.write("<html>");
+            miVentana.document.write("<head>");
+            miVentana.document.write("<title>Ventana de prueba</title>");
+            miVentana.document.write("</head>");
+            miVentana.document.write("<body>");
+            miVentana.document.write("<input type='button' value='Cerrar ventana' onclick='window.close()' />");
+            miVentana.document.write("</body>");
+            miVentana.document.write("</html>");
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>
