@@ -1,5 +1,6 @@
 # Presentacion sobre Gestión de ventanas en JavaScript
 
+[Link de la presentación en Google Docs](https://docs.google.com/presentation/d/1mN81YoZN9i8eiDWw-S2_CzRZVvtxxBWZUVEP3yet8g0/edit?usp=sharing)
 
 # Listado de links de iconos usados de [flaticon](https://www.flaticon.es/)
 1. [Señal De Stop](https://www.flaticon.es/icono-gratis/senal-de-stop_1743240?term=stop&page=1&position=25&page=1&position=25&related_id=1743240&origin=search)
