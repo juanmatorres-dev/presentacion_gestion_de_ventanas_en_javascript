@@ -58,7 +58,7 @@
                 miVentana.document.write("<h1>");
                 miVentana.document.write("Ventana " + i);
                 miVentana.document.write("</h1>");
-                miVentana.document.write("<input type='button' value='Cerrar ventana' onclick='window.close()' />");
+                miVentana.document.write("<input type='button' value='Cerrar ventana' onclick='window.opener.limpiarArrayVentanaCerrada('"+ i +"'); window.opener.contarVentanas(); window.close();' />");
                 miVentana.document.write("</body>");
                 miVentana.document.write("</html>");
                 
@@ -75,7 +75,7 @@
             for (var i = 0; i < arrayDeVentanas.length; i++) {
                 arrayDeVentanas[i].close();
             }
-            arrayDeVentanas = []; // Limpiamos el array instanciándolo de nuevo
+            limpiarArrayVentanas();
             contarVentanas();
         }
 
@@ -85,6 +85,13 @@
             document.getElementById("contadorVentanas").innerHTML = "Ventanas abiertas : " + arrayDeVentanas.length;    
         }
 
+        function limpiarArrayVentanas() {
+            arrayDeVentanas = []; // Limpiamos el array instanciándolo de nuevo
+        }
+
+        function limpiarArrayVentanaCerrada(id) {
+            arrayDeVentanas.slice(id,1); // Limpiamos el array instanciándolo de nuevo
+        }
         
 
 
