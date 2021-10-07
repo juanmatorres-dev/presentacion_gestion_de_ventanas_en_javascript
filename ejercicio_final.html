@@ -10,14 +10,14 @@
 
 <body>
     <h1>Ejercicio final</h1>
-    
+
     <p>
         Introduce el número de ventanas que quieres abrir :
         <input type="number" id="numVentanasUser" />
     </p>
 
-    <hr/>
-    
+    <hr />
+
     <p>
         <input type="button" value="Abrir ventanas" onclick="abrirVentanas()" />
     </p>
@@ -27,32 +27,42 @@
     </p>
 
     <script type="text/javascript">
-
         var numVentanas = 0;
         var arrayDeVentanas = [];
+        var numMaxVentanasRecomendado = 50;
+        
 
         function abrirVentanas() {
+            var confirmar = true;
 
             numVentanas = document.getElementById("numVentanasUser").value;
 
-            for (var i = 0; i < numVentanas; i++) {
-                var miVentana;
-                miVentana = window.open("", "", "width=777, height=777"); // miVentana = window.open("", "Ventana" + i, "width=777, height=777");
-                miVentana.document.write("<html>");
-                miVentana.document.write("<head>");
-                miVentana.document.write("<title>Ventana de prueba " + i + "</title>");
-                miVentana.document.write("</head>");
-                miVentana.document.write("<body>");
-                miVentana.document.write("<h1>");
-                miVentana.document.write("Ventana " + i);
-                miVentana.document.write("</h1>");
-                miVentana.document.write("<input type='button' value='Cerrar ventana' onclick='window.close();' />");
-                miVentana.document.write("</body>");
-                miVentana.document.write("</html>");
-                
-                arrayDeVentanas.unshift(miVentana); // Cargamos todas las ventanas en el array | unshift añade los elementos al principio del array
-                
+            if (numVentanas > numMaxVentanasRecomendado) {
+                var confirmar = confirm("¿Vas a abrir " + numVentanas + " ventanas a la vez, quieres continuar?");
             }
+            
+            if (confirmar) {
+                for (var i = 0; i < numVentanas; i++) {
+                    var miVentana;
+                    miVentana = window.open("", "","width=777, height=777"); // miVentana = window.open("", "Ventana" + i, "width=777, height=777");
+                    miVentana.document.write("<html>");
+                    miVentana.document.write("<head>");
+                    miVentana.document.write("<title>Ventana de prueba " + i + "</title>");
+                    miVentana.document.write("</head>");
+                    miVentana.document.write("<body>");
+                    miVentana.document.write("<h1>");
+                    miVentana.document.write("Ventana " + i);
+                    miVentana.document.write("</h1>");
+                    miVentana.document.write("<input type='button' value='Cerrar ventana' onclick='window.close();' />");
+                    miVentana.document.write("</body>");
+                    miVentana.document.write("</html>");
+
+                    arrayDeVentanas.unshift(
+                    miVentana); // Cargamos todas las ventanas en el array | unshift añade los elementos al principio del array
+
+                }
+            }
+
 
         }
 
@@ -67,10 +77,6 @@
         function limpiarArrayVentanas() {
             arrayDeVentanas = []; // Limpiamos el array instanciándolo de nuevo
         }
-
-        
-        
-
     </script>
 </body>
 
