@@ -16,14 +16,6 @@
         <input type="number" id="numVentanasUser" />
     </p>
 
-    <p>
-        <select name="ventanasAbiertas">
-            <option value="value1">Value 1</option>
-            <option value="value2" selected>Value 2</option>
-            <option value="value3">Value 3</option>
-          </select>
-    </p>
-
     <hr/>
     
     <p>
@@ -32,10 +24,6 @@
 
     <p>
         <input type="button" value="Cerrar todas las ventanas" onclick="cerrarTodasLasVentanas()" />
-    </p>
-
-    <p id="contadorVentanas">
-        Ventanas abiertas : 
     </p>
 
     <script type="text/javascript">
@@ -58,15 +46,13 @@
                 miVentana.document.write("<h1>");
                 miVentana.document.write("Ventana " + i);
                 miVentana.document.write("</h1>");
-                miVentana.document.write("<input type='button' value='Cerrar ventana' onclick='window.opener.restarNumVentanas(); window.opener.contarVentanas(); window.close();' />");
+                miVentana.document.write("<input type='button' value='Cerrar ventana' onclick='window.close();' />");
                 miVentana.document.write("</body>");
                 miVentana.document.write("</html>");
                 
-                arrayDeVentanas.push(miVentana); // Cargamos todas las ventanas en el array
+                arrayDeVentanas.unshift(miVentana); // Cargamos todas las ventanas en el array | unshift añade los elementos al principio del array
                 
             }
-
-            contarVentanas(0);
 
         }
 
@@ -76,31 +62,12 @@
                 arrayDeVentanas[i].close();
             }
             limpiarArrayVentanas();
-            contarVentanas(0);
-        }
-
-        contarVentanas(0);
-
-        function contarVentanas(resta) {
-            var numVentanasAbiertas = arrayDeVentanas.length;
-            var resultado = numVentanasAbiertas - resta;
-            document.getElementById("contadorVentanas").innerHTML = "Ventanas abiertas : " + resultado;    
         }
 
         function limpiarArrayVentanas() {
             arrayDeVentanas = []; // Limpiamos el array instanciándolo de nuevo
         }
 
-
-        function restarNumVentanas() {
-            contarVentanas(1);
-        }
-
-
-        /* Este método no funciona !!!! */
-        function limpiarArrayVentanaCerrada(id) {
-            arrayDeVentanas.slice(id,2); // Limpiamos el array instanciándolo de nuevo
-        }
         
         
 
