@@ -16,6 +16,15 @@
         <input type="number" id="numVentanasUser" />
     </p>
 
+    <p>
+        Modo de apertura de ventanas : 
+        <select name="modoAperturaVentana" id="modoAperturaVentana">
+            <option value="predeterminado" selected>Por defecto (según el navegador se abrirá de una forma diferente)</option>
+            <option value="centrar">Todas centradas en la pantalla</option>
+            <option value="aleatorio">En coordenadas aleatorias, pero dentro de un rectángulo imaginario que quepa dentro de la pantalla (se adapta a cada pantalla)</option>
+        </select>
+    </p>
+
     <hr />
 
     <p>
@@ -30,10 +39,11 @@
         var numVentanas = 0;
         var arrayDeVentanas = [];
         var numMaxVentanasRecomendado = 50;
-        
+        var modoDeAperturaDeVentana = "?";
 
         function abrirVentanas() {
             var confirmar = true;
+            modoDeAperturaDeVentana = document.getElementById("modoAperturaVentana").value;
 
             numVentanas = document.getElementById("numVentanasUser").value;
 
@@ -42,9 +52,39 @@
             }
             
             if (confirmar) {
+
+                var altura = 380;
+                var anchura = 630;
+
+
                 for (var i = 0; i < numVentanas; i++) {
                     var miVentana;
-                    miVentana = window.open("", "","width=777, height=777"); // miVentana = window.open("", "Ventana" + i, "width=777, height=777");
+                    switch (modoDeAperturaDeVentana) {
+                        case "predeterminado":
+                            miVentana = window.open("", "","width=777, height=777"); // miVentana = window.open("", "Ventana" + i, "width=777, height=777");        
+                            break;
+
+                        case "centrar":
+
+                            var y = parseInt((window.screen.height / 2) - (altura / 2));
+                            var x = parseInt((window.screen.width / 2) - (anchura / 2));
+
+                            miVentana = window.open("", "","width=" + anchura + ", height=" + altura + ", top=" + y + ",left=" + x + "" );
+                            //miVentana = window.open('' , target = 'blank', 'width=' + anchura + ',height=' + altura + ',top=' + y +',left=' + x);        
+                            break;
+
+                        case "aleatorio":
+
+                            var max_X = parseInt(window.screen.width / 2) - anchura;
+							var max_Y = parseInt(window.screen.height / 2) - altura;
+
+                            miVentana = window.open("", "","width=" + anchura + ", height=" + altura + ", top=" + getRandomArbitrary(max_X,max_Y ) + ",left=" + getRandomArbitrary(max_X,max_Y) + "" ); 
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                    
                     miVentana.document.write("<html>");
                     miVentana.document.write("<head>");
                     miVentana.document.write("<title>Ventana de prueba " + i + "</title>");
@@ -57,11 +97,15 @@
                     miVentana.document.write("</body>");
                     miVentana.document.write("</html>");
 
-                    arrayDeVentanas.unshift(
-                    miVentana); // Cargamos todas las ventanas en el array | unshift añade los elementos al principio del array
+                    arrayDeVentanas.unshift(miVentana); // Cargamos todas las ventanas en el array | unshift añade los elementos al principio del array
 
                 }
+            
+            
+            
+            
             }
+
 
 
         }
@@ -77,6 +121,13 @@
         function limpiarArrayVentanas() {
             arrayDeVentanas = []; // Limpiamos el array instanciándolo de nuevo
         }
+
+
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+
     </script>
 </body>
 
