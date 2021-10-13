@@ -17,9 +17,12 @@
     <script type="text/javascript">
 
         function abrirVentanas() {
-            for (var i = 0; i < 5; i++) {
-                var miVentana;
-                miVentana = window.open("", "", "width=777, height=777"); // miVentana = window.open("", "Ventana" + i, "width=777, height=777");
+
+            var miVentana;
+            for (var i = 0; i < 3; i++) {
+                
+                miVentana = window.open("", "", "width=777, height=777"); 
+                //miVentana = window.open("", "Ventana" + i, "width=777, height=777");
                 miVentana.document.write("<html>");
                 miVentana.document.write("<head>");
                 miVentana.document.write("<title>Ventana de prueba " + i + "</title>");
@@ -30,7 +33,10 @@
                 miVentana.document.write("</html>");
                 
                 
+                
             }
+            //console.log(miVentana);
+            //miVentana[1].document.write("<p>Hola desde la ventana 1</p>");
 
         }
     </script>
