@@ -1,0 +1,162 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    margin: 0;
+    background-color: #E1E1E9;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1 {
+    margin: 0;
+    background-color: #34344C;
+    color: white;
+    font-size: 350%;
+    text-align: center;
+}
+
+section{
+    position: relative;
+    top: 2rem;
+    /*left: 50% auto;*/
+    margin: 0 auto;
+    width: 35%;
+    border-left: #34344C solid 3px;
+    border-right: #34344C solid 3px;
+}
+
+
+.separacion_entre_cajones {
+    margin-bottom: 50px;
+}
+
+/* No usada actualmente */
+.internet {
+    position: absolute;
+    top: 7rem;
+    /*right: -60%;*/
+    left: 60%;
+    width: 35%;
+    border-left: #34344C solid 3px;
+    border-right: #34344C solid 3px;
+}
+
+h2 {
+    margin: 1rem;
+    background-color: #33354D;
+    color: white;
+    font-size: 205%;
+    text-align: center;
+    border-radius: 50px;
+}
+
+article {
+    border-radius: 10px;
+    margin: 25px ;
+    padding-bottom: 1px;
+    background-color: #FFFFFF;
+}
+
+h3 {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 4.5px;
+    background-color: #29A333;
+    font-size: 150%;
+    color: white;  /* Lo he añadido en lo del pdf */
+    margin: 0;       /* Lo he añadido para evitar el salto de línea natura de la etiqueta h3 
+                        , esto provocaba un espacio que no se corresponde con la foto de la 
+                        solución , por eso lo he añadido  */
+}
+
+p {
+    margin: 5px;
+    padding: 10px;
+    font-size: 17px;
+    display: inline-block;
+}
+
+
+.social-icons{
+    font-size: 30px;
+    text-decoration: none;
+}
+
+
+
+.separar_artistas{
+
+    padding: 5px;
+   
+}
+
+
+.licencia{
+    margin: 0 auto;
+    display: flex;
+    
+}
+
+/* Responsivo (Pone las cajas una debajo de la otra además de reducir los tamaños de letras de algunos títulos ) */
+
+@media screen and (max-width: 1024px){
+    h1 {
+      font-size: 300%;
+    }
+  
+    h2 {
+      margin: 20px;
+      font-size: 150%;
+    }
+    
+    .separacion_entre_cajones{
+        position: static;  /* Static hace que la caja no se mueva */
+        top: 6rem;
+        left: 1.1%;
+        width: 100%;
+        border-left: #34344C  3px;
+        border-right: #34344C  3px;   
+    }
+    .internet {
+        position: static;   /* Este atributo permite que la caja de arriba empuje a la de abajo cuando se valla estrechando la pantalla */
+        top: 83%;
+        right: 9.7%;
+        width: 100%;
+        border-left: #34344C  3px;
+        border-right: #34344C  3px;
+    }
+
+    /* Antigua forma de hacer los dos bloques de arriba ( por id ) | Código duplicado de otra forma ( solo los dos bloques de arriba ) */
+    /*
+    section#escritorio {
+      position: static;  /* Static hace que la caja no se mueva *
+      top: 6rem;
+      left: 1.1%;
+      width: 100%;
+      border-left: #34344C  3px;
+      border-right: #34344C  3px;
+    }
+    */
+    /*
+  section#internet {
+      position: sticky;   /* Este atributo permite que la caja de arriba empuje a la de abajo cuando se valla estrechando la pantalla *
+      top: 83%;
+      right: 9.7%;
+      width: 100%;
+      border-left: #34344C  3px;
+      border-right: #34344C  3px;
+  }
+  */
+
+   
+}
+
+   
+
+
+
